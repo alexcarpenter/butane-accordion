@@ -1051,9 +1051,9 @@ var createClass = function () {
   };
 }();
 
-var ButaneAccordian = function () {
-  function ButaneAccordian(element) {
-    classCallCheck(this, ButaneAccordian);
+var ButaneAccordion = function () {
+  function ButaneAccordion(element) {
+    classCallCheck(this, ButaneAccordion);
 
     this.accordion = element;
 
@@ -1072,7 +1072,7 @@ var ButaneAccordian = function () {
     this.addEventListeners();
   }
 
-  createClass(ButaneAccordian, [{
+  createClass(ButaneAccordion, [{
     key: 'addEventListeners',
     value: function addEventListeners() {
       var _this = this;
@@ -1126,14 +1126,14 @@ var ButaneAccordian = function () {
     key: 'bindKeyPress',
     value: function bindKeyPress(event) {}
   }]);
-  return ButaneAccordian;
+  return ButaneAccordion;
 }();
 
 var init = function init() {
-  var butaneAccordians = document.querySelectorAll('[data-butane-accordian]');
+  var butaneAccordions = document.querySelectorAll('[data-butane-accordion]');
 
-  Array.from(butaneAccordians).forEach(function (accordion) {
-    new ButaneAccordian(accordion); // eslint-disable-line no-new
+  Array.from(butaneAccordions).forEach(function (accordion) {
+    new ButaneAccordion(accordion); // eslint-disable-line no-new
   });
 };
 

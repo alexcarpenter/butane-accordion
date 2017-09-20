@@ -2,7 +2,7 @@
 
 require('wicg-inert');
 
-class ButaneAccordian {
+class ButaneAccordion {
   constructor (element) {
     this.accordion = element;
 
@@ -66,10 +66,10 @@ class ButaneAccordian {
 }
 
 const init = () => {
-  const butaneAccordians = document.querySelectorAll('[data-butane-accordian]');
+  const butaneAccordions = document.querySelectorAll('[data-butane-accordion]');
 
-  Array.from(butaneAccordians).forEach(accordion => {
-    new ButaneAccordian(accordion); // eslint-disable-line no-new
+  Array.from(butaneAccordions).forEach(accordion => {
+    new ButaneAccordion(accordion); // eslint-disable-line no-new
   });
 };
 
