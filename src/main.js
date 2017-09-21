@@ -43,12 +43,14 @@ class ButaneAccordion {
     this.collapseAll()
     const panel = this.getPanel(button)
     button.setAttribute('aria-expanded', true)
+    button.classList.add('is-active')
     panel.hidden = false
   }
 
   collapse (button) {
     const panel = this.getPanel(button)
     button.setAttribute('aria-expanded', false)
+    button.classList.remove('is-active')
     panel.hidden = true
   }
 
@@ -63,6 +65,7 @@ class ButaneAccordion {
   }
 
   bindKeyPress (event) {
+
   }
 }
 

@@ -6,10 +6,11 @@
   "module": "dist/butane-accordion.esm.js",
   "browser": "dist/butane-accordion.umd.js",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c && npm run copy",
     "dev": "rollup -c -w",
     "lint": "eslint src",
-    "test": "jest"
+    "test": "jest",
+    "copy": "cp ./dist/butane-accordion.umd.js docs/butane-accordion.umd.js"
   },
   "devDependencies": {
     "babel": "^6.23.0",
