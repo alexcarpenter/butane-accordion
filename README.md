@@ -24,6 +24,16 @@ import ButaneAccordion from 'butane-accordion'
 ButaneAccordion.init()
 ```
 
+## Options
+
+By default only one accordion panel can be opened at a time. To allow for multiple panels to be open, add `data-butane-accordion-multiple` along side `data-butane-accordion` to allow for that type of functionality.
+
+```html
+<dl role="presentation" data-butane-accordion data-butane-accordion-multiple>
+  ...
+</dl>
+```
+
 ## Expected DOM structure
 
 Below is the minimum required elements and attributes needed.
