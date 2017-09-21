@@ -12,6 +12,8 @@ class ButaneAccordion {
     this.buttonFirst = this.buttons[0]
     this.buttonLast = this.buttons[this.buttons.length - 1]
 
+    this.allowMultiple = this.accordion.hasAttribute('data-butane-accorion-multiple')
+
     this.toggle = this.toggle.bind(this)
     this.expand = this.expand.bind(this)
     this.collapse = this.collapse.bind(this)
@@ -40,7 +42,9 @@ class ButaneAccordion {
   }
 
   expand (button) {
-    this.collapseAll()
+    if (!this.allowMultiple) {
+      this.collapseAll()
+    }
     const panel = this.getPanel(button)
     button.setAttribute('aria-expanded', true)
     button.classList.add('is-active')
@@ -55,7 +59,8 @@ class ButaneAccordion {
   }
 
   getPanel (element) {
-    return document.getElementById(element.getAttribute('aria-controls'))
+    const elementId = element.getAttribute('aria-controls')
+    return this.accordion.querySelector(`#${elementId}`)
   }
 
   collapseAll () {

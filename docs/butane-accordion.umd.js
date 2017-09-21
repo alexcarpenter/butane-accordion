@@ -1073,6 +1073,8 @@ var ButaneAccordion = function () {
     this.buttonFirst = this.buttons[0];
     this.buttonLast = this.buttons[this.buttons.length - 1];
 
+    this.allowMultiple = this.accordion.hasAttribute('data-butane-accorion-multiple');
+
     this.toggle = this.toggle.bind(this);
     this.expand = this.expand.bind(this);
     this.collapse = this.collapse.bind(this);
@@ -1107,7 +1109,9 @@ var ButaneAccordion = function () {
   }, {
     key: 'expand',
     value: function expand(button) {
-      this.collapseAll();
+      if (!this.allowMultiple) {
+        this.collapseAll();
+      }
       var panel = this.getPanel(button);
       button.setAttribute('aria-expanded', true);
       button.classList.add('is-active');
@@ -1124,7 +1128,8 @@ var ButaneAccordion = function () {
   }, {
     key: 'getPanel',
     value: function getPanel(element) {
-      return document.getElementById(element.getAttribute('aria-controls'));
+      var elementId = element.getAttribute('aria-controls');
+      return this.accordion.querySelector('#' + elementId);
     }
   }, {
     key: 'collapseAll',

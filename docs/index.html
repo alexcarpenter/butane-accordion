@@ -5,7 +5,32 @@
   <title>Butane Accordion</title>
 </head>
 <body>
+  <h1>Default accordion</h1>
   <dl role="presentation" data-butane-accordion>
+    <dt role="heading" aria-level="2">
+      <button aria-expanded="false" aria-controls="sect1" id="button1">Section 1</button>
+    </dt>
+    <dd id="sect1" aria-labeledby="button1" hidden>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio sunt unde dignissimos fuga voluptatum molestias qui aut, temporibus beatae officia! Voluptate aspernatur dignissimos maxime qui temporibus minus beatae magni autem.</p>
+    </dd>
+
+    <dt role="heading" aria-level="2">
+      <button aria-expanded="false" aria-controls="sect2" id="button2">Section 2</button>
+    </dt>
+    <dd id="sect2" aria-labeledby="button2" hidden>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio sunt unde dignissimos fuga voluptatum molestias qui aut, temporibus beatae officia! Voluptate aspernatur dignissimos maxime qui temporibus minus beatae magni autem.</p>
+    </dd>
+
+    <dt role="heading" aria-level="2">
+      <button aria-expanded="false" aria-controls="sect3" id="button3">Section 3</button>
+    </dt>
+    <dd id="sect3" aria-labeledby="button3" hidden>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio sunt unde dignissimos fuga voluptatum molestias qui aut, temporibus beatae officia! Voluptate aspernatur dignissimos maxime qui temporibus minus beatae magni autem.</p>
+    </dd>
+  </dl>
+
+  <h1>Accordion that allows multiple panels to be open</h1>
+  <dl role="presentation" data-butane-accordion data-butane-accorion-multiple>
     <dt role="heading" aria-level="2">
       <button aria-expanded="false" aria-controls="sect1" id="button1">Section 1</button>
     </dt>
