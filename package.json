@@ -1,6 +1,6 @@
 {
   "name": "butane-accordion",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "description": "A lightweight accessible accordion JS library",
   "main": "dist/butane-accordion.cjs.js",
   "module": "dist/butane-accordion.esm.js",
@@ -31,8 +31,7 @@
     "rollup-plugin-node-resolve": "^3.0.0"
   },
   "dependencies": {
-    "ms": "^2.0.0",
-    "wicg-inert": "^1.1.4"
+    "ms": "^2.0.0"
   },
   "keywords": [
     "accessibility",

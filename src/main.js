@@ -1,6 +1,5 @@
 'use strict'
 
-import 'wicg-inert'
 import { keyCodes } from './utils'
 
 class ButaneAccordion {

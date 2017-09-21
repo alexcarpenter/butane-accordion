@@ -1,7 +1,5 @@
 'use strict';
 
-require('wicg-inert');
-
 const keyCodes = {
   esc: 27,
   tab: 9,
