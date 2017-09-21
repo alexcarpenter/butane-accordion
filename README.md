@@ -26,10 +26,17 @@ ButaneAccordion.init()
 
 ## Expected DOM structure
 
-Below is the minimum required elements and attributes needed. An additional styling layer is also required to show/hide accordions. There are some basic example styles within `docs/styles.css` for reference.
+Below is the minimum required elements and attributes needed.
 
 ```html
-
+<dl role="presentation" data-butane-accordion>
+  <dt role="heading" aria-level="2">
+    <button aria-expanded="false" aria-controls="sect1" id="button1">Section 1</button>
+  </dt>
+  <dd id="sect1" aria-labeledby="button1" hidden>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio sunt unde dignissimos fuga voluptatum molestias qui aut, temporibus beatae officia! Voluptate aspernatur dignissimos maxime qui temporibus minus beatae magni autem.</p>
+  </dd>
+</dl>
 ```
 
 ## License
