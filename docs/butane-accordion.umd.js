@@ -1027,6 +1027,17 @@ var inert = createCommonjsModule(function (module, exports) {
   });
 });
 
+var keyCodes = {
+  esc: 27,
+  tab: 9,
+  upArrow: 38,
+  rightArrow: 39,
+  downArrow: 40,
+  leftArrow: 37,
+  home: 36,
+  end: 35
+};
+
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -1126,7 +1137,38 @@ var ButaneAccordion = function () {
     }
   }, {
     key: 'bindKeyPress',
-    value: function bindKeyPress(event) {}
+    value: function bindKeyPress(event) {
+      var target = event.target;
+      var which = event.which;
+      var direction = void 0;
+
+      if (target.hasAttribute('aria-controls')) {
+        if (which === keyCodes.upArrow || which === keyCodes.downArrow) {
+          var index = this.buttonsArray.indexOf(target);
+          switch (which) {
+            case keyCodes.upArrow:
+              direction = -1;
+              break;
+            case keyCodes.downArrow:
+              direction = 1;
+              break;
+          }
+          var length = this.buttonsArray.length;
+          var newIndex = (index + length + direction) % length;
+
+          this.buttonsArray[newIndex].focus();
+        } else if (which === keyCodes.home || keyCodes.end) {
+          switch (which) {
+            case keyCodes.home:
+              this.buttonFirst.focus();
+              break;
+            case keyCodes.end:
+              this.buttonLast.focus();
+              break;
+          }
+        }
+      }
+    }
   }]);
   return ButaneAccordion;
 }();

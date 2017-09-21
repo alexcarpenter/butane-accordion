@@ -65,7 +65,36 @@ class ButaneAccordion {
   }
 
   bindKeyPress (event) {
+    const target = event.target
+    const which = event.which
+    let direction
 
+    if (target.hasAttribute('aria-controls')) {
+      if (which === keyCodes.upArrow || which === keyCodes.downArrow) {
+        const index = this.buttonsArray.indexOf(target)
+        switch (which) {
+          case keyCodes.upArrow:
+            direction = -1
+            break
+          case keyCodes.downArrow:
+            direction = 1
+            break
+        }
+        const length = this.buttonsArray.length
+        const newIndex = (index + length + direction) % length
+
+        this.buttonsArray[newIndex].focus()
+      } else if (which === keyCodes.home || keyCodes.end) {
+        switch (which) {
+          case keyCodes.home:
+            this.buttonFirst.focus()
+            break
+          case keyCodes.end:
+            this.buttonLast.focus()
+            break
+        }
+      }
+    }
   }
 }
 

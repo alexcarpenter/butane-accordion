@@ -1,6 +1,6 @@
 {
   "name": "butane-accordion",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "description": "A lightweight accessible accordion JS library",
   "main": "dist/butane-accordion.cjs.js",
   "module": "dist/butane-accordion.esm.js",
