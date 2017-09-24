@@ -59,7 +59,12 @@ class ButaneAccordion {
 
   getPanel (element) {
     const elementId = element.getAttribute('aria-controls')
-    return this.accordion.querySelector(`#${elementId}`)
+    const panel = this.accordion.querySelector(`#${elementId}`)
+    if (!panel) {
+      throw new Error(`An accordion panel with an ID of ${elementId} does not exist.`)
+    } else {
+      return panel
+    }
   }
 
   collapseAll () {

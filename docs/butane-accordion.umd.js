@@ -106,7 +106,12 @@ var ButaneAccordion = function () {
     key: 'getPanel',
     value: function getPanel(element) {
       var elementId = element.getAttribute('aria-controls');
-      return this.accordion.querySelector('#' + elementId);
+      var panel = this.accordion.querySelector('#' + elementId);
+      if (!panel) {
+        throw new Error('An accordion panel with an ID of ' + elementId + ' does not exist.');
+      } else {
+        return panel;
+      }
     }
   }, {
     key: 'collapseAll',
