@@ -1,15 +1,6 @@
 'use strict';
 
-const keyCodes = {
-  esc: 27,
-  tab: 9,
-  upArrow: 38,
-  rightArrow: 39,
-  downArrow: 40,
-  leftArrow: 37,
-  home: 36,
-  end: 35
-};
+var butaneUtils = require('butane-utils');
 
 class ButaneAccordion {
   constructor (element) {
@@ -88,13 +79,13 @@ class ButaneAccordion {
     let direction;
 
     if (target.hasAttribute('aria-controls')) {
-      if (which === keyCodes.upArrow || which === keyCodes.downArrow) {
+      if (which === butaneUtils.keyCodes.upArrow || which === butaneUtils.keyCodes.downArrow) {
         const index = this.buttonsArray.indexOf(target);
         switch (which) {
-          case keyCodes.upArrow:
+          case butaneUtils.keyCodes.upArrow:
             direction = -1;
             break
-          case keyCodes.downArrow:
+          case butaneUtils.keyCodes.downArrow:
             direction = 1;
             break
         }
@@ -102,12 +93,12 @@ class ButaneAccordion {
         const newIndex = (index + length + direction) % length;
 
         this.buttonsArray[newIndex].focus();
-      } else if (which === keyCodes.home || keyCodes.end) {
+      } else if (which === butaneUtils.keyCodes.home || butaneUtils.keyCodes.end) {
         switch (which) {
-          case keyCodes.home:
+          case butaneUtils.keyCodes.home:
             this.buttonFirst.focus();
             break
-          case keyCodes.end:
+          case butaneUtils.keyCodes.end:
             this.buttonLast.focus();
             break
         }

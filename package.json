@@ -1,6 +1,6 @@
 {
   "name": "butane-accordion",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.6",
   "description": "A lightweight accessible accordion JS library",
   "main": "dist/butane-accordion.cjs.js",
   "module": "dist/butane-accordion.esm.js",
@@ -31,6 +31,7 @@
     "rollup-plugin-node-resolve": "^3.0.0"
   },
   "dependencies": {
+    "butane-utils": "^1.0.0",
     "ms": "^2.0.0"
   },
   "keywords": [

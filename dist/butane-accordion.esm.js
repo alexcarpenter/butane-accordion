@@ -1,13 +1,4 @@
-const keyCodes = {
-  esc: 27,
-  tab: 9,
-  upArrow: 38,
-  rightArrow: 39,
-  downArrow: 40,
-  leftArrow: 37,
-  home: 36,
-  end: 35
-};
+import { keyCodes } from 'butane-utils';
 
 class ButaneAccordion {
   constructor (element) {

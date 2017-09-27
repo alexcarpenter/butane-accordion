@@ -1,6 +1,6 @@
 'use strict'
 
-import { keyCodes } from './utils'
+import { keyCodes } from 'butane-utils'
 
 class ButaneAccordion {
   constructor (element) {
